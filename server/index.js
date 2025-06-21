@@ -71,9 +71,8 @@ app.listen(PORT, () => {
 
 // ----------------------------------------function to add a category as a admin--------------------------------------- //
 
-const categoryName = "";
-const categoryDiscription = "";
-createCategoryIfNotExists(categoryName,categoryDiscription);
+const categoryName = "Python";
+const categoryDiscription = "python is a fucking course";
 
 const createCategoryIfNotExists = async (categoryName,categoryDiscription) => { 
   try{
@@ -98,15 +97,15 @@ const createCategoryIfNotExists = async (categoryName,categoryDiscription) => {
     console.error(err);
   }
 };
+// createCategoryIfNotExists(categoryName,categoryDiscription);
 
 
 
 
 // ------------------------------function to add a course into a student list without payment---------------------------------- //
 
-const courseid ="";
-const studentid = "";
-// addInaCourse(courseid,studentid);
+const courseid ="685699bca3a2e49dcdc313c1";
+const studentid = "68569aa3a3a2e49dcdc313f8";
 
 const addInaCourse = async(courseid, studentid)=>{
   try{ 
@@ -116,7 +115,7 @@ const addInaCourse = async(courseid, studentid)=>{
       return ;
     }
     console.log("course shi hai id mil gayi");
-
+    
     if(course.studentsEnrolled.includes(studentid)){
       console.log ("already enrolled");
       return ;
@@ -131,7 +130,7 @@ const addInaCourse = async(courseid, studentid)=>{
       { new: true }
     )
     console.log("student mein push kr diya hai");
-
+    
     course.studentsEnrolled.push(student._id);
     await course.save();
     console.log("course mein push ho gya hai");
@@ -140,3 +139,4 @@ const addInaCourse = async(courseid, studentid)=>{
     console.log("gadbad hai add krne mein");
   }
 }
+// addInaCourse(courseid,studentid);
